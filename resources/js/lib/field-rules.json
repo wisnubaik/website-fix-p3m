@@ -1,0 +1,176 @@
+{
+  "rules": {
+    "text": {
+      "max": 20000,
+      "help": "Teks boleh berisi huruf, angka, spasi, dan tanda baca."
+    },
+    "person": {
+      "max": 1000,
+      "pattern": "^(?=.*\\p{L})[\\p{L}\\p{M} .,'`’‘;()\\-]+$",
+      "partial": "^[\\p{L}\\p{M} .,'`’‘;()\\-]*$",
+      "help": "Nama hanya berisi huruf, spasi, dan tanda baca nama atau gelar. Angka tidak diperbolehkan."
+    },
+    "people": {
+      "max": 4000,
+      "pattern": "^(?=[\\s\\S]*\\p{L})[\\p{L}\\p{M} .,'`’‘;()\\-\\n\\r&/]+$",
+      "partial": "^[\\p{L}\\p{M} .,'`’‘;()\\-\\n\\r&/]*$",
+      "help": "Isi nama dengan huruf dan tanda baca gelar. Pisahkan beberapa nama dengan titik koma atau baris baru."
+    },
+    "initial": {
+      "max": 8,
+      "pattern": "^\\p{L}+$",
+      "partial": "^\\p{L}*$",
+      "help": "Inisial hanya huruf, maksimal 8 karakter."
+    },
+    "integer": {
+      "max": 10,
+      "pattern": "^[0-9]+$",
+      "partial": "^[0-9]*$",
+      "minValue": 0,
+      "maxValue": 2147483647,
+      "inputMode": "numeric",
+      "help": "Isi bilangan bulat 0-2147483647. Tanpa Rp, huruf, desimal, tanda minus, atau pemisah ribuan."
+    },
+    "digits": {
+      "max": 32,
+      "pattern": "^[0-9]+$",
+      "partial": "^[0-9]*$",
+      "inputMode": "numeric",
+      "help": "Isi angka 0-9 saja. Angka nol di depan tetap dipertahankan."
+    },
+    "year": {
+      "max": 4,
+      "pattern": "^(19|20)[0-9]{2}$",
+      "partial": "^[0-9]{0,4}$",
+      "inputMode": "numeric",
+      "help": "Tahun 4 digit, antara 1900 dan 2099. Contoh: 2026."
+    },
+    "phone": {
+      "max": 80,
+      "pattern": "^\\+?[0-9(][0-9(). /\\-]*$",
+      "partial": "^\\+?[0-9(). /\\-]*$",
+      "inputMode": "tel",
+      "help": "Isi nomor telepon dengan angka. Tanda + di awal, spasi, kurung, garis miring, dan tanda hubung diperbolehkan."
+    },
+    "email": {
+      "max": 254,
+      "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+      "inputMode": "email",
+      "help": "Isi alamat email lengkap, misalnya nama@pnm.ac.id."
+    },
+    "documentNumber": {
+      "max": 180,
+      "pattern": "^(?=[\\s\\S]*[\\p{L}0-9])[\\p{L}\\p{M}0-9 ./_()\\-]+$",
+      "partial": "^[\\p{L}\\p{M}0-9 ./_()\\-]*$",
+      "help": "Nomor surat boleh berisi huruf, angka, spasi, titik, garis miring, kurung, garis bawah, dan tanda hubung."
+    },
+    "instagram": {
+      "max": 100,
+      "pattern": "^(?:@?[A-Za-z0-9_.]{1,30}|https://(?:www\\.)?instagram\\.com/[A-Za-z0-9_.]{1,30}/?)$",
+      "help": "Isi nama akun Instagram, misalnya @p3m_pnm, atau URL profil Instagram."
+    },
+    "formattedInteger": {
+      "max": 20,
+      "pattern": "^(?:[0-9]+|[1-9][0-9]{0,2}(?:\\.[0-9]{3})+)$",
+      "partial": "^[0-9.]*$",
+      "inputMode": "numeric",
+      "help": "Isi bilangan bulat. Titik hanya boleh sebagai pemisah ribuan, misalnya 1.500."
+    }
+  },
+  "fields": {
+    "riset-entries": {
+      "leader": "person",
+      "member1": "people",
+      "member2": "people"
+    },
+    "staff": {
+      "name": "person",
+      "initial": "initial"
+    },
+    "winners": {
+      "name": "person"
+    },
+    "ki-karya": {
+      "ketua": "people"
+    },
+    "riset-grup": {
+      "ketua": "person"
+    },
+    "monev-slot": {
+      "nama": "person"
+    },
+    "kegiatan": {
+      "narasumber": "people"
+    },
+    "accounts": {
+      "name": "person"
+    },
+    "pbl": {
+      "jumlahMahasiswa": "integer",
+      "jumlahProdi": "integer",
+      "mahasiswa": "people"
+    },
+    "settings": {
+      "phone": "phone",
+      "fax": "phone",
+      "email": "email",
+      "instagram": "instagram"
+    },
+    "announcements": {
+      "num": "documentNumber"
+    },
+    "collection": {
+      "saintek": "formattedInteger",
+      "soshum": "formattedInteger"
+    }
+  },
+  "common": {
+    "year": "year",
+    "tahun": "year",
+    "email": "email",
+    "phone": "phone",
+    "fax": "phone",
+    "nip": "digits",
+    "nidn": "digits",
+    "nim": "digits",
+    "nik": "digits"
+  },
+  "labels": {
+    "nama lengkap": "person",
+    "nama dosen": "person",
+    "nama ketua": "person",
+    "ketua": "person",
+    "nama reviewer": "person",
+    "nama mahasiswa": "people",
+    "anggota": "people",
+    "email": "email",
+    "e-mail": "email",
+    "telepon": "phone",
+    "nomor telepon": "phone",
+    "no. telepon": "phone",
+    "whatsapp": "phone",
+    "fax": "phone",
+    "nip": "digits",
+    "nidn": "digits",
+    "nim": "digits",
+    "nik": "digits",
+    "tahun": "year",
+    "jumlah": "integer",
+    "jumlah mahasiswa": "integer",
+    "jumlah program studi": "integer",
+    "pendanaan (rupiah)": "integer",
+    "dana (rupiah)": "integer",
+    "nominal": "integer",
+    "nomor surat": "documentNumber",
+    "no. surat": "documentNumber",
+    "anggaran": "integer",
+    "dana": "integer",
+    "biaya": "integer",
+    "pendanaan": "integer",
+    "total": "integer",
+    "jumlah anggota": "integer",
+    "jumlah mahasiswa terlibat": "integer",
+    "jumlah prodi": "integer",
+    "jumlah peneliti": "integer"
+  }
+}

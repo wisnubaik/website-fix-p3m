@@ -1,0 +1,64 @@
+*.log
+.DS_Store
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.codex
+/.cursor/
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/fonts-manifest.dev.json
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+_ide_helper.php
+Homestead.json
+Homestead.yaml
+Thumbs.db
+/.tools
+
+/database/mysql/*.sql
+/storage/app/private/mysql-migration/
+/storage/inertia-devtools/
+
+# Environment files (keep example templates)
+.env.*
+!.env.example
+!.env.*.example
+
+# Database and backups
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+
+
+# Private application files
+
+
+# Private application files
+
+
+# Generated Inertia SSR build output
+/bootstrap/ssr/
+
+# Keep private storage placeholder; ignore private data
+/storage/app/private/**
+!/storage/app/private/.gitignore
+

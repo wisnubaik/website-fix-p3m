@@ -1,0 +1,127 @@
+{
+  "/hubungi": {
+    "title": "Hubungi Kami",
+    "description": "Hubungi tim P3M Politeknik Negeri Madiun untuk informasi penelitian, pengabdian, kerjasama industri, dan layanan kekayaan intelektual.",
+    "path": "/hubungi"
+  },
+  "/informasi/kegiatan": {
+    "title": "Kegiatan",
+    "description": "Dokumentasi kegiatan P3M Politeknik Negeri Madiun: workshop penulisan artikel ilmiah, sosialisasi penelitian dan pengabdian, serta serah terima produk hilirisasi.",
+    "path": "/informasi/kegiatan"
+  },
+  "/informasi/laporan-keuangan": {
+    "title": "Laporan Keuangan",
+    "description": "Format laporan realisasi belanja, surat pernyataan tanggung jawab belanja, petunjuk pelaporan keuangan, dan rumus perhitungan pajak penelitian serta pengabdian.",
+    "path": "/informasi/laporan-keuangan"
+  },
+  "/informasi/luaran": {
+    "title": "Luaran",
+    "description": "Formulir pendataan luaran penelitian dan pengabdian per tahun, serta daftar proyek Problem Based Learning Politeknik Negeri Madiun.",
+    "path": "/informasi/luaran"
+  },
+  "/informasi/mitra": {
+    "title": "Mitra Kerja Sama",
+    "description": "Kuesioner kepuasan mitra kerja sama Politeknik Negeri Madiun, dokumen kerja sama, dan format berita acara serah terima alat.",
+    "path": "/informasi/mitra"
+  },
+  "/informasi/pengumuman": {
+    "title": "Pengumuman",
+    "description": "Riwayat pengumuman resmi P3M PNM, bernomor surat dan disertai dokumen pendukung.",
+    "path": "/informasi/pengumuman"
+  },
+  "/informasi/sinta": {
+    "title": "SINTA",
+    "description": "Profil SINTA Politeknik Negeri Madiun, templat pendataan, tutorial pengelolaan akun, dan ambang SINTA Score untuk pengajuan hibah.",
+    "path": "/informasi/sinta"
+  },
+  "/informasi/tkt": {
+    "title": "Tingkat Kesiapan Teknologi",
+    "description": "Sembilan tingkat kesiapan teknologi (TKT) beserta pengelompokannya menurut jenis penelitian, dan buku panduan pengukurannya.",
+    "path": "/informasi/tkt"
+  },
+  "/layanan/asesmen": {
+    "title": "Asesmen Lapangan",
+    "description": "Dokumen pendukung asesmen lapangan akreditasi program studi: laporan penilaian review proposal, penggunaan dana PPM, dan laporan seminar hasil.",
+    "path": "/layanan/asesmen"
+  },
+  "/layanan/ki": {
+    "title": "Kekayaan Intelektual",
+    "description": "Daftar karya Kekayaan Intelektual Politeknik Negeri Madiun, formulir pengajuan insentif, dan data produk jasa yang diadopsi industri.",
+    "path": "/layanan/ki"
+  },
+  "/layanan/monev": {
+    "title": "Monitoring & Evaluasi",
+    "description": "Indikator penilaian, jadwal Monev 2026 per jurusan, Monev BIMA, serta berita acara dan dokumentasi monitoring dan evaluasi P3M Politeknik Negeri Madiun.",
+    "path": "/layanan/monev"
+  },
+  "/layanan/panduan": {
+    "title": "Panduan",
+    "description": "Buku panduan penelitian dan pengabdian, rencana strategis P3M, panduan pelaporan, serta acuan warna sampul proposal dan laporan.",
+    "path": "/layanan/panduan"
+  },
+  "/layanan/semhas": {
+    "title": "Seminar Hasil",
+    "description": "Jadwal paparan Seminar Hasil per jurusan, berita acara, SK, dan dokumentasi seminar hasil penelitian dan pengabdian P3M Politeknik Negeri Madiun.",
+    "path": "/layanan/semhas"
+  },
+  "/": {
+    "title": "P3M Politeknik Negeri Madiun",
+    "description": "Pusat Penelitian dan Pengabdian Kepada Masyarakat Politeknik Negeri Madiun. Mendorong riset terapan, hilirisasi, dan kolaborasi industri.",
+    "path": "/"
+  },
+  "/penelitian/eksternal": {
+    "title": "Penelitian Eksternal",
+    "description": "Pendanaan penelitian dari BIMA Kemdiktisaintek dan mitra eksternal lainnya.",
+    "path": "/penelitian/eksternal"
+  },
+  "/penelitian/internal": {
+    "title": "Penelitian Internal",
+    "description": "Skema penelitian yang didanai dari DIPA Politeknik Negeri Madiun untuk dosen seluruh program studi.",
+    "path": "/penelitian/internal"
+  },
+  "/penelitian": {
+    "title": "Penelitian",
+    "description": "Program penelitian dosen Politeknik Negeri Madiun. skema internal, eksternal, unggulan, dan dokumen pendukung.",
+    "path": "/penelitian"
+  },
+  "/penelitian/unggulan": {
+    "title": "Penelitian Unggulan",
+    "description": "Skema unggulan dengan target output strategis dan kontribusi ke program studi.",
+    "path": "/penelitian/unggulan"
+  },
+  "/pkm/eksternal": {
+    "title": "PkM Eksternal",
+    "description": "Pendanaan pengabdian masyarakat dari BIMA dan mitra eksternal lainnya.",
+    "path": "/pkm/eksternal"
+  },
+  "/pkm/internal": {
+    "title": "PkM Internal",
+    "description": "Skema pengabdian masyarakat yang didanai dari DIPA Politeknik Negeri Madiun.",
+    "path": "/pkm/internal"
+  },
+  "/pkm": {
+    "title": "Pengabdian Masyarakat",
+    "description": "Program pengabdian masyarakat. skema PkM untuk pemberdayaan, desa binaan, dan kemitraan dengan industri.",
+    "path": "/pkm"
+  },
+  "/pkm/unggulan": {
+    "title": "PkM Unggulan",
+    "description": "Skema unggulan untuk pengabdian dengan dampak strategis dan berkelanjutan.",
+    "path": "/pkm/unggulan"
+  },
+  "/profil": {
+    "title": "Profil P3M",
+    "description": "Profil, visi, misi, tujuan, struktur organisasi, tugas, bidang fokus riset, dan peta jalan P3M Politeknik Negeri Madiun.",
+    "path": "/profil"
+  },
+  "/repository": {
+    "title": "Repository",
+    "description": "Repository P3M Politeknik Negeri Madiun beserta buku panduan penggunaannya, dan pustaka dokumen penelitian dan pengabdian.",
+    "path": "/repository"
+  },
+  "/riset-grup": {
+    "title": "Riset Grup",
+    "description": "Kelompok riset di lingkungan Politeknik Negeri Madiun. fokus kajian, ketua, dan roadmap penelitian masing-masing.",
+    "path": "/riset-grup"
+  }
+}

@@ -1,0 +1,9 @@
+import { CmsInput } from '@/components/admin/CmsInput';
+import { useEffect, useRef, useState } from 'react';
+import { managedRequest, type ManagedPage } from './managed-site';
+export default function DeletePageDialog({page,onClose,onDeleted}:{page:ManagedPage;onClose:()=>void;onDeleted:()=>void}) {
+    const dialog=useRef<HTMLDialogElement>(null);const [confirm,setConfirm]=useState('');const [busy,setBusy]=useState(false);const [error,setError]=useState('');
+    useEffect(()=>{dialog.current?.showModal();return()=>dialog.current?.close();},[]);
+    async function remove(e:React.FormEvent){e.preventDefault();setBusy(true);setError('');try{await managedRequest(`/api/admin/managed-pages/${page.id}`,'PUT',{version:page.version,action:'purge',confirmPath:confirm});onDeleted();}catch(e){setError((e as Error).message);}finally{setBusy(false);}}
+    return <dialog ref={dialog} className="cms-modal backdrop:bg-slate-900/60 m-auto" aria-labelledby="delete-page-title" onCancel={e=>{e.preventDefault();if(!busy)onClose();}}><form onSubmit={remove}><h2 id="delete-page-title">Hapus permanen “{page.title}”?</h2><p className="my-4">Isi halaman dan riwayat drafnya akan dihapus. Tindakan ini tidak bisa dibatalkan melalui CMS.</p><p className="cms-help mb-4">Tautan menu ke halaman ini ikut dibersihkan. Halaman lain, submenu yang menuju halaman lain, berkas unggahan, serta data bersama tetap tersimpan.</p><label className="cms-field"><span>Ketik {page.path} untuk mengonfirmasi</span><CmsInput autoFocus autoComplete="off" value={confirm} onChange={e=>setConfirm(e.target.value)}/></label>{error&&<p role="alert" className="cms-notice error">{error}</p>}<div className="cms-actions justify-end"><button type="button" disabled={busy} className="cms-button" onClick={onClose}>Batal</button><button className="cms-button danger" disabled={busy||confirm!==page.path}>{busy?'Menghapus…':'Hapus permanen'}</button></div></form></dialog>;
+}

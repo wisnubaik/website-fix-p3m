@@ -1,0 +1,32 @@
+{
+  "AcaraPeriode": [
+    {
+      "id": "default-semhas-2026",
+      "acara": "semhas",
+      "tahun": 2026,
+      "judul": "Seminar Hasil 2026",
+      "tanggalMulai": "2026-10-12",
+      "tanggalSelesai": "2026-10-19",
+      "tempat": "Kampus 1 dan Kampus 2 Politeknik Negeri Madiun",
+      "keterangan": "Seminar hasil penelitian dan pengabdian kepada masyarakat tahun 2026. Pelaksanaan mengikuti pembagian jurusan dan lokasi dalam Jadwal Semhas 2026 rev.2.",
+      "timeline": "[]",
+      "published": 1,
+      "deletedAt": null,
+      "updatedAt": "2026-10-28 00:00:00"
+    }
+  ],
+  "AcaraSkema": [
+    {
+      "id": "default-semhas-2026-penelitian",
+      "acara": "semhas",
+      "periodeId": "default-semhas-2026",
+      "nama": "Skema 1",
+      "keterangan": "Jadwal seminar hasil penelitian dan pengabdian kepada masyarakat tahun 2026. Pilih jurusan, jenis kegiatan, dan tanggal pelaksanaan untuk melihat jadwal peserta.",
+      "order": 0,
+      "published": 1,
+      "deletedAt": null,
+      "createdAt": "2026-10-28 00:00:00",
+      "updatedAt": "2026-10-28 00:00:00"
+    }
+  ]
+}

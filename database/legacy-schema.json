@@ -1,0 +1,2417 @@
+[
+  {
+    "name": "HeroContent",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false,
+        "default": "hero"
+      },
+      {
+        "name": "badge",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "titleText",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "titleItalicWord",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "lead",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "ctaPrimaryLabel",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "ctaPrimaryHref",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "ctaSecondaryLabel",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "ctaSecondaryHref",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "ContentListItem",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "section",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "text",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "RoadmapItem",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "year",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "title",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "desc",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "FocusCluster",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "title",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "desc",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "SiteSettings",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false,
+        "default": "settings"
+      },
+      {
+        "name": "logoUrl",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "institution",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "officeTitle",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": "Kantor P3M PNM"
+      },
+      {
+        "name": "officeDescription",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": "Pusat Penelitian dan Pengabdian Kepada Masyarakat. Kunjungi kami pada hari kerja untuk konsultasi langsung."
+      },
+      {
+        "name": "email",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "phone",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "fax",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "instagram",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "address",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "mapsUrl",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "poBox",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "QuickAccessLink",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "href",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "title",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "meta",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "accent",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": "navy"
+      },
+      {
+        "name": "iconName",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": "FileText"
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "ActivityLog",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "adminId",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "username",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "action",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "resource",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "detail",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": [
+      {
+        "type": "index",
+        "fields": [
+          "adminId",
+          "createdAt"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "HubCard",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "hub",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "title",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "desc",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "href",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "accentName",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": "navy"
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "Admin",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "email",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": true
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "passwordHash",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "role",
+        "type": "AdminRole",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "isActive",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      },
+      {
+        "name": "mustChangePassword",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": false
+      },
+      {
+        "name": "tempPasswordExpiresAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "sessionVersion",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "lastLoginAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "passwordChangedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "DocumentItem",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "section",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "groupTitle",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "groupMark",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "kind",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "year",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "category",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "href",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      },
+      {
+        "name": "periodeId",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "skemaId",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "ProfileTableContent",
+    "fields": [
+      {
+        "name": "documentId",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "content",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "version",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 1
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "Announcement",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "num",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "tahun",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "title",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "kind",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "badge",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "urgent",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": false
+      },
+      {
+        "name": "href",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "TautanPengusulan",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "label",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "href",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "RisetGrup",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "nama",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "ketua",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "fokus",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "deskripsi",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "roadmapHref",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "logoUrl",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "anggota",
+        "type": "Int",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "TrendStat",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "metric",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "year",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "value",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": [
+      {
+        "type": "unique",
+        "fields": [
+          "metric",
+          "year"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "StatEntry",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "group",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "label",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "value",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "Winner",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "category",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "skema",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "tag",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "ArchiveBlock",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "page",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "blockType",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "title",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "date",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "body",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "url",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "meta",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "Staff",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "role",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "initial",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "photoUrl",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "details",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "RisetEntry",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "category",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "year",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "title",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "leader",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "member1",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "member2",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "funding",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": [
+      {
+        "type": "index",
+        "fields": [
+          "category",
+          "year"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "MonevSlot",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "acara",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": "monev"
+      },
+      {
+        "name": "jurusan",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "sesi",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "tanggal",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "mulai",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "selesai",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "nama",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "prodi",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      },
+      {
+        "name": "periodeId",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "skemaId",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "tempat",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "reviewer",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "catatan",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": [
+      {
+        "type": "index",
+        "fields": [
+          "acara",
+          "jurusan",
+          "sesi"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AcaraPeriode",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "acara",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "judul",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "tanggalMulai",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "tanggalSelesai",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "tempat",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "keterangan",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      },
+      {
+        "name": "tahun",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "timeline",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false,
+        "default": "[]"
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "KiKarya",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "tahun",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "judul",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "ketua",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "prodi",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "jenisKi",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": "Hak Cipta"
+      },
+      {
+        "name": "bentuk",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "status",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": [
+      {
+        "type": "index",
+        "fields": [
+          "prodi",
+          "tahun"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AsesmenLapangan",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "prodi",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "tanggal",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "PblProyek",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "prodi",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "proyek",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "sumber",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "mitra",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "bidang",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "waktu",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "jumlahMahasiswa",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "mahasiswa",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "peranNama",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false,
+        "default": "semua"
+      },
+      {
+        "name": "jumlahProdi",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "hasil",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "belum",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "sudah",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": [
+      {
+        "type": "index",
+        "fields": [
+          "prodi"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kegiatan",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "judul",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "tanggalMulai",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "tanggalSelesai",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "tempat",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "narasumber",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "ringkasan",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "foto",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "AdminSession",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "adminId",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "expiresAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "revokedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": [
+      {
+        "type": "index",
+        "fields": [
+          "adminId"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "RateLimit",
+    "fields": [
+      {
+        "name": "key",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "failures",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "expiresAt",
+        "type": "BigInt",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "UploadAsset",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": true
+      },
+      {
+        "name": "size",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "sha256",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "visibility",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": "private"
+      },
+      {
+        "name": "actorId",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "Researcher",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "identifier",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": true
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "ResearcherAlias",
+    "fields": [
+      {
+        "name": "alias",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "researcherId",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": []
+  },
+  {
+    "name": "ResearchContribution",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "researcherId",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "risetEntryId",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "role",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": [
+      {
+        "type": "unique",
+        "fields": [
+          "researcherId",
+          "risetEntryId",
+          "role"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AcaraSkema",
+    "fields": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary": true,
+        "unique": false
+      },
+      {
+        "name": "acara",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "periodeId",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "nama",
+        "type": "String",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "keterangan",
+        "type": "String",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "order",
+        "type": "Int",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": 0
+      },
+      {
+        "name": "published",
+        "type": "Boolean",
+        "nullable": false,
+        "primary": false,
+        "unique": false,
+        "default": false
+      },
+      {
+        "name": "createdAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "updatedAt",
+        "type": "DateTime",
+        "nullable": false,
+        "primary": false,
+        "unique": false
+      },
+      {
+        "name": "deletedAt",
+        "type": "DateTime",
+        "nullable": true,
+        "primary": false,
+        "unique": false
+      }
+    ],
+    "indexes": []
+  }
+]

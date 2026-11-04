@@ -1,0 +1,27 @@
+import { CmsInput } from '@/components/admin/CmsInput';
+import { useState } from 'react';
+import { Link, router, usePage } from '@inertiajs/react';
+import AdminLayout from '@/Layouts/AdminLayout';
+import DeletePageDialog from '@/components/admin/DeletePageDialog';
+import CreatePageDialog from '@/components/admin/CreatePageDialog';
+import { managedRequest, type ManagedPage } from '@/components/admin/managed-site';
+import type { SharedProps } from '@/types';
+export default function PagesIndex({pages}:{pages:ManagedPage[]}) {
+    const {auth}=usePage<SharedProps>().props;const editable=auth.user?.role==='SUPERADMIN';
+    const [query,setQuery]=useState('');const [group,setGroup]=useState('');const [status,setStatus]=useState('');const [create,setCreate]=useState(false);
+    const [source,setSource]=useState<ManagedPage|undefined>();const [deleting,setDeleting]=useState<ManagedPage|null>(null);const [busy,setBusy]=useState(false);
+    const [error,setError]=useState('');
+    async function recover(p:ManagedPage){if(busy)return;setBusy(true);setError('');try{await managedRequest(`/api/admin/managed-pages/${p.id}`,'PUT',{version:p.version,action:'recover'});router.reload();}catch(e){setError((e as Error).message);}finally{setBusy(false);}}
+    const ordered=[...pages].sort((a,b)=>{const rank=(p:ManagedPage)=>p.path==='/'?0:p.path==='/profil'?1:p.path==='@global'?9:({Beranda:0,'Tentang & lainnya':2,'Penelitian & PkM':3,Layanan:4,Informasi:5,'Halaman tambahan':7} as Record<string,number>)[p.group??'']??8;return rank(a)-rank(b);});
+    const filtered=ordered.filter(p=>(status==='archived'?p.archived:!p.archived)&&(!group||p.group===group)&&(!status||status==='archived'||(status==='published'?p.published:!p.published||p.hasChanges))&&`${p.title} ${p.path}`.toLowerCase().includes(query.toLowerCase()));
+    return <AdminLayout><div className="cms-heading"><div><div className="cms-overline">Konten situs</div><h1>Halaman</h1><p>Pilih halaman yang ingin diubah. Teks, gambar, dan data pendukungnya tersedia di satu tempat.</p></div>{editable&&<button className="cms-button primary" onClick={()=>{setSource(undefined);setCreate(true);}}>+ Tambah halaman</button>}</div>
+        {!editable&&<div className="cms-notice">Anda dapat mengelola data sesuai hak akses akun. Teks, susunan halaman, dan menu dikelola oleh superadmin.</div>}
+        <div className="cms-toolbar"><CmsInput className="cms-input" aria-label="Cari halaman" placeholder="Cari nama atau alamat halaman…" value={query} onChange={e=>setQuery(e.target.value)}/><select className="cms-input !w-auto" aria-label="Kelompok halaman" value={group} onChange={e=>setGroup(e.target.value)}><option value="">Semua kelompok</option>{[...new Set(pages.map(p=>p.group))].map(g=><option key={g}>{g}</option>)}</select><select className="cms-input !w-auto" aria-label="Status halaman" value={status} onChange={e=>setStatus(e.target.value)}><option value="">Semua status</option><option value="published">Terbit</option><option value="draft">Draf / belum diterbitkan</option><option value="archived">Sampah</option></select></div>
+        {status==='archived'&&<p className="cms-notice">Halaman di Sampah tidak dapat diakses pengunjung. Pulihkan sebagai draf atau hapus permanen jika sudah tidak diperlukan.</p>}
+        {error&&<div className="cms-notice error" role="alert">{error}</div>}<div className="cms-table-wrap cms-page-list"><table className="cms-table"><thead><tr><th>Halaman</th><th>Kelompok</th><th>Status</th><th><span className="sr-only">Tindakan</span></th></tr></thead><tbody>{filtered.map(p=><tr key={p.id}><td>{p.archived?<strong>{p.title}</strong>:<Link href={`/admin/halaman/${p.id}`} className="title">{p.path==='/'?'Beranda':p.title}</Link>}<span className="cms-url">{p.path==='@global'?'Berlaku untuk seluruh situs':p.path}</span></td><td>{p.group}</td><td><div className="cms-actions"><span className={`cms-status ${p.published?'live':'draft'}`}>{p.archived?'Di Sampah':p.published?'Sedang tampil':'Belum diterbitkan'}</span>{p.published&&p.hasChanges&&<span className="cms-status draft">Ada perubahan draf</span>}</div></td><td><div className="cms-actions">{p.archived ? editable&&<><button disabled={busy} className="cms-button small" onClick={()=>recover(p)}>Pulihkan sebagai draf</button>{!p.builtin&&<button className="cms-button small danger" onClick={()=>setDeleting(p)}>Hapus permanen</button>}</> : <><Link className="cms-button small" href={`/admin/halaman/${p.id}`}>Kelola</Link>{editable&&!p.builtin&&<button className="cms-button small" onClick={()=>{setSource(p);setCreate(true);}}>Duplikat</button>}</>}</div></td></tr>)}</tbody></table>{!filtered.length&&<div className="cms-empty">Tidak ada halaman yang sesuai. Coba kata kunci lain.</div>}</div>
+        {editable&&<p className="cms-help mt-4">Perlu mengembalikan konten bawaan? Buka <Link className="cms-link" href="/admin/reset-konten">Reset & pemulihan</Link>.</p>}
+        <p className="cms-help mt-4">{filtered.length} halaman Susunan navbar diatur terpisah melalui <Link className="cms-link" href="/admin/menu">Menu & navigasi</Link>.</p>
+        {create&&<CreatePageDialog source={source} onClose={()=>setCreate(false)} onCreated={p=>router.visit(`/admin/halaman/${p.id}`)}/>}
+        {deleting&&<DeletePageDialog page={deleting} onClose={()=>setDeleting(null)} onDeleted={()=>{setDeleting(null);router.reload();}}/>}
+    </AdminLayout>;
+}

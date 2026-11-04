@@ -1,0 +1,30 @@
+import type { EventPeriod } from '@/components/ui/EventPeriods';
+import type { DocSection } from '@/lib/doc-types';
+import type { Announcement } from '@/components/ui/PengumumanList';
+import type { KegiatanItem } from '@/lib/kegiatan.server';
+import type { JadwalJurusan } from '@/lib/monev-content';
+import type { KaryaKi } from '@/lib/ki-content';
+import type { ProyekPbl } from '@/lib/pbl-content';
+import type { RisetGrup } from '@/lib/riset-grup-content';
+
+type TextItem = { id: string; text: string };
+type Period = { judul: string; tanggalMulai: string; tanggalSelesai: string | null; tempat: string | null; keterangan: string | null };
+export type ContentProps = {
+    page: string;
+    title: string;
+    sections: DocSection[];
+    announcements: Announcement[];
+    activities: KegiatanItem[];
+    contact: Record<'institution' | 'officeTitle' | 'officeDescription' | 'email' | 'phone' | 'fax' | 'instagram' | 'address' | 'mapsUrl' | 'poBox', string>;
+    staff: { initial: string; role: string; name: string; details: string[][]; photoUrl?: string }[];
+    profileLists: Record<string, TextItem[]>;
+    media: { id: string; name: string; href: string; category: string | null; groupTitle: string; profileTable: { content: string } | null }[];
+    focusClusters: { id: string; title: string; desc: string }[];
+    researchGroups: RisetGrup[];
+    schedule: JadwalJurusan[];
+    period: Period | null;
+    eventPeriods: EventPeriod[];
+    kiData: KaryaKi[];
+    pblData: ProyekPbl[];
+    asesmen: { prodi: string; tanggal: string }[];
+};

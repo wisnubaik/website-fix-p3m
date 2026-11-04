@@ -1,0 +1,14 @@
+.viewport { overflow-x:auto; padding:24px 12px; border:1px solid #d4dce5; background:white; }
+.roots,.children { display:flex; justify-content:center; list-style:none; padding:0; margin:0; width:max-content; min-width:100%; }
+.branch { display:flex; flex-direction:column; align-items:center; position:relative; padding:0 12px; flex:1; }
+.box { position:relative; z-index:1; width:200px; min-height:84px; padding:20px 16px; border:1px solid #aebfd0; border-radius:3px; background:white; color:#183249; text-align:center; overflow-wrap:anywhere; line-height:1.6; font-size:14px; }
+.box button { width:100%; color:inherit; font:inherit; background:none; border:0; cursor:pointer; }
+.box button:focus-visible { outline:2px solid #1768b0; outline-offset:5px; }
+.roots>.branch>.box { background:#183249; color:white; }
+.children { padding-top:48px; position:relative; }
+.children::before { content:''; position:absolute; top:0; left:50%; height:24px; border-left:1px solid #8ea6bf; }
+.children>.branch::before { content:''; position:absolute; top:-24px; left:0; right:0; height:24px; border-top:1px solid #8ea6bf; }
+.children>.branch:first-child::before { left:50%; }
+.children>.branch:last-child::before { right:50%; }
+.children>.branch::after { content:''; position:absolute; top:-24px; left:50%; height:24px; border-left:1px solid #8ea6bf; }
+.children .box::before { content:''; position:absolute; left:calc(50% - 4px); top:-6px; border-left:4px solid transparent; border-right:4px solid transparent; border-top:6px solid #8ea6bf; }

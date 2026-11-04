@@ -1,0 +1,43 @@
+import { useEffect, useRef, useState } from 'react';
+import { Link, usePage } from '@inertiajs/react';
+import { ChevronDown } from 'lucide-react';
+import { NAV } from '@/lib/nav-config';
+import { useCms, CmsText, type PublicMenuItem } from '@/components/ui/ManagedContent';
+
+function NavLink({href='',children,...props}:{href?:string;children:React.ReactNode;[key:string]:any}) {
+    return /^https?:\/\/|^mailto:|^tel:/.test(href)?<a href={href} {...props}>{children}</a>:<Link href={href||'/'} {...props}>{children}</Link>;
+}
+export default function Navbar({logoUrl}:{logoUrl?:string|null}) {
+    const {cms,text}=useCms();const pathname=usePage().url.split('?')[0];
+    const items:PublicMenuItem[]=cms?.menu??[...NAV,{id:'contact',label:'Hubungi kami',href:'/hubungi'}].map((item,i)=>({...item,id:item.id??String(i),children:item.children?.map((child,j)=>({...child,id:`${i}-${j}`}))}));
+    const [compact,setCompact]=useState(true);const bar=useRef<HTMLDivElement>(null);const brand=useRef<HTMLDivElement>(null);const measure=useRef<HTMLDivElement>(null);
+    const [mobile,setMobile]=useState(false);const [open,setOpen]=useState<string|null>(null);const root=useRef<HTMLElement>(null);
+    useEffect(()=>{setMobile(false);setOpen(null);},[pathname]);
+    useEffect(()=>{const click=(e:MouseEvent)=>{if(!root.current?.contains(e.target as Node))setOpen(null);};const key=(e:KeyboardEvent)=>{if(e.key==='Escape'){setOpen(null);setMobile(false);}};document.addEventListener('click',click);document.addEventListener('keydown',key);return()=>{document.removeEventListener('click',click);document.removeEventListener('keydown',key);};},[]);
+    useEffect(()=>{if(!mobile)return;const old=document.body.style.overflow;const htmlOverflow=document.documentElement.style.overflow;document.body.style.overflow='hidden';document.documentElement.style.overflow='hidden';return()=>{document.body.style.overflow=old;document.documentElement.style.overflow=htmlOverflow;};},[mobile]);
+    useEffect(()=>{
+        let disposed=false;
+        const fit=()=>{if(disposed||!bar.current||!brand.current||!measure.current)return;const padding=getComputedStyle(bar.current);const available=bar.current.clientWidth-parseFloat(padding.paddingLeft)-parseFloat(padding.paddingRight)-brand.current.offsetWidth-20;setCompact(window.innerWidth<1280||measure.current.scrollWidth>available);};
+        const observer=new ResizeObserver(fit);[bar.current,brand.current,measure.current].forEach(element=>{if(element)observer.observe(element);});window.addEventListener('resize',fit);document.fonts.ready.then(fit);fit();return()=>{disposed=true;observer.disconnect();window.removeEventListener('resize',fit);};
+    },[JSON.stringify(items),text('navbar_brand','P3M PNM'),text('navbar_institution','Politeknik Negeri Madiun')]);
+    useEffect(()=>{setMobile(false);setOpen(null);},[compact]);
+    useEffect(()=>{
+        if(!mobile)return;
+        const previous=document.activeElement as HTMLElement|null;
+        const trap=(event:KeyboardEvent)=>{
+            if(event.key!=='Tab')return;
+            const elements=Array.from(root.current?.querySelectorAll<HTMLElement>('a[href],button:not([disabled]),select,[tabindex="0"]')??[]).filter(element=>element.getClientRects().length>0);
+            const first=elements[0],last=elements[elements.length-1];
+            if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}
+            else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}
+        };
+        document.addEventListener('keydown',trap);
+        return()=>{document.removeEventListener('keydown',trap);if(previous?.isConnected)previous.focus({preventScroll:true});};
+    },[mobile]);
+    function active(item:PublicMenuItem):boolean{return item.href?.split('?')[0]===pathname||!!item.children?.some(active);}
+    return <header data-lenis-prevent={mobile || undefined} ref={root} className={`${mobile ? "fixed inset-0 h-[100dvh] flex flex-col bg-white" : "sticky top-0 bg-white/95 backdrop-blur"} z-50 border-b border-[var(--color-outline-gray)]`}><div ref={bar} className="w-full shrink-0 max-w-[1440px] mx-auto px-5 md:px-10 flex items-center gap-5 min-h-[82px] py-3">
+        <div ref={brand} className="min-w-0 shrink-0 max-w-[calc(100%-110px)]"><Link href={cms?.preview?'/?cms_preview=1':'/'} aria-label="P3M PNM, beranda" className="flex items-center gap-3 min-w-0 xl:shrink-0"><img src={logoUrl||'/logo/p3m-pnm.png'} alt={`Logo ${text('navbar_brand', 'P3M PNM')}`} className="w-12 h-12 shrink-0 object-contain"/><span className="min-w-0 max-w-[190px]"><strong className="block font-display text-lg text-[var(--color-absolute-zero)] truncate"><CmsText field="navbar_brand" fallback="P3M PNM"/></strong><span className="block text-[11px] text-[var(--color-graphite)] truncate"><CmsText field="navbar_institution" fallback="Politeknik Negeri Madiun"/></span></span></Link></div>
+        <nav aria-label="Navigasi utama" className={`${compact?'hidden':'flex'} items-center justify-end gap-x-1 flex-1 whitespace-nowrap`}>{items.map(item=><div className="relative flex items-center" key={item.id}>{item.href?<NavLink href={item.href} aria-current={active(item)?'page':undefined} className={`inline-flex items-center h-11 px-3 text-[13px] font-semibold hover:text-[var(--color-cosmic-candy)] ${item.href?.split('?')[0]==='/hubungi'?'bg-[var(--color-absolute-zero)] text-white':active(item)?'text-[var(--color-cosmic-candy)]':'text-[var(--color-absolute-zero)]'}`}>{item.label}</NavLink>:<button className="inline-flex items-center h-11 px-3 text-[13px] font-semibold text-[var(--color-absolute-zero)]" aria-expanded={open===item.id} aria-controls={`nav-${item.id}`} onClick={()=>setOpen(open===item.id?null:item.id)}>{item.label}</button>}{!!item.children?.length&&<><button className="inline-flex items-center justify-center self-center h-11 w-7 shrink-0" aria-label={`Buka submenu ${item.label}`} aria-expanded={open===item.id} aria-controls={`nav-${item.id}`} onClick={()=>setOpen(open===item.id?null:item.id)}><ChevronDown size={15} strokeWidth={1.8} aria-hidden="true" className={`transition-transform ${open===item.id?'rotate-180':''}`}/></button>{open===item.id&&<ul data-lenis-prevent id={`nav-${item.id}`} className="absolute right-0 top-full min-w-60 max-w-80 bg-white border border-[var(--color-outline-gray)] shadow-lg py-2 max-h-[65dvh] overflow-y-auto rounded-b-md">{item.children.map(child=><li key={child.id}><NavLink href={child.href} onClick={()=>setOpen(null)} className="block whitespace-normal break-words px-5 py-3 text-sm text-[var(--color-absolute-zero)] hover:bg-[var(--color-whisper-white)]">{child.label}</NavLink></li>)}</ul>}</>}</div>)}</nav>
+        <button className={`${compact?'block':'hidden'} ml-auto shrink-0 border border-[var(--color-outline-gray)] px-4 py-2 text-sm font-semibold`} aria-controls="mobile-site-nav" aria-expanded={mobile} onClick={()=>setMobile(!mobile)}>{mobile?'Tutup ×':'Menu ☰'}</button>
+    </div><div ref={measure} aria-hidden="true" inert className="fixed top-0 left-0 invisible flex gap-x-1 w-max whitespace-nowrap origin-top-left scale-0 pointer-events-none">{items.map(item=><span key={item.id} className="flex items-center"><span className="inline-flex items-center h-11 px-3 text-[13px] font-semibold">{item.label}</span>{!!item.children?.length&&<span className="inline-flex items-center justify-center self-center h-11 w-7 shrink-0"><ChevronDown size={15} strokeWidth={1.8}/></span>}</span>)}</div>{mobile&&<nav data-lenis-prevent id="mobile-site-nav" aria-label="Navigasi seluler" className="flex-1 min-h-0 w-full overflow-y-auto overscroll-contain touch-pan-y border-t bg-white px-5 pb-7">{items.map(item=><div key={item.id} className="border-b border-[var(--color-outline-gray)] py-3"><div className="flex items-center justify-between gap-3">{item.href?<NavLink href={item.href} className="font-semibold py-2 min-w-0 break-words" onClick={()=>setMobile(false)}>{item.label}</NavLink>:<span className="font-semibold py-2 min-w-0 break-words">{item.label}</span>}{!!item.children?.length&&<button className="px-4 py-2 border shrink-0" aria-expanded={open===item.id} aria-label={`Submenu ${item.label}`} onClick={()=>setOpen(open===item.id?null:item.id)}><ChevronDown size={18} aria-hidden="true" className={`transition-transform ${open===item.id?'rotate-180':''}`}/></button>}</div>{open===item.id&&<ul className="border-l pl-4 ml-1 my-2">{item.children?.map(child=><li key={child.id}><NavLink href={child.href} onClick={()=>setMobile(false)} className="block py-3 text-sm break-words">{child.label}</NavLink></li>)}</ul>}</div>)}</nav>}</header>;
+}

@@ -1,0 +1,302 @@
+@import "tailwindcss" source(none);
+@import "./fonts.css";
+@source "../js";
+@source "../views";
+
+@theme {
+  /* =====================================================================
+   * Politeknik Negeri Madiun — Blue variant of the Replicate
+   * "Neon Gradient Playground" system. Keeps the same structural rules
+   * (sharp cards, pill buttons, big display type, vibrant gradient hero)
+   * but recolours the palette to PNM's institutional navy/blue identity.
+   * ===================================================================*/
+
+  /* === Brand tokens (blue palette) === */
+  --color-absolute-zero: #0a2540;     /* deep navy — primary text on light */
+  --color-alabaster: #ffffff;
+  --color-graphite: #4a5a6e;          /* slate-blue body text */
+  --color-silver-mist: #b5c4d6;
+  --color-whisper-white: #f4f7fb;
+  --color-outline-gray: #d5dde7;
+  --color-blackhole: #061830;         /* near-black navy */
+  --color-cosmic-candy: #1e63b8;      /* PNM brand blue — primary accent */
+  --color-deep-space-blue: #0a2540;
+  --color-sunset-burst: #2d6bb8;      /* lighter accent blue */
+  --color-data-bloom-gradient: #4d9fff;
+  --color-api-success-green: #2b9a66;
+
+  /* =====================================================================
+   * Legacy aliases — existing `navy-*`, `gold-*`, `teal-*` … class names
+   * remap onto the new palette so the brand transforms instantly.
+   * ===================================================================*/
+
+  /* Navy ⇒ true PNM navy scale */
+  --color-navy-900: #061830;
+  --color-navy-800: #0a2540;
+  --color-navy-700: #0f3460;
+  --color-navy-600: #1e4a8c;
+  --color-navy-500: #2d6bb8;
+  --color-navy-200: #b5d4f4;
+  --color-navy-100: #e6f1fb;
+
+  /* Gold ⇒ warm amber scale — academic, premium accent */
+  --color-gold-700: #9a6b08;
+  --color-gold-600: #d4920c;
+  --color-gold-500: #1e63b8;      /* PNM blue — used for heading italic text */
+  --color-gold-400: #4d9fff;      /* light blue — used for hero italic text */
+  --color-gold-200: #fef3d6;
+  --color-gold-100: #fef9eb;
+
+  /* Functional accents ⇒ true semantic colors, harmonious with PNM blue */
+  --color-teal-600: #0e8c7f;
+  --color-teal-100: #d5f0ec;
+  --color-rose-600: #d94352;
+  --color-rose-100: #fde8ea;
+  --color-leaf-600: #2b9a66;
+  --color-leaf-100: #d5f0e3;
+  --color-violet-600: #7c5cbf;
+  --color-violet-100: #ede8f7;
+
+  /* Surface & ink */
+  --color-bg: #ffffff;
+  --color-bg-soft: #f4f7fb;
+  --color-surface: #ffffff;
+  --color-line: #d5dde7;
+  --color-line-strong: #b5c4d6;
+
+  --color-ink: #0a2540;
+  --color-ink-2: #0a2540;
+  --color-ink-3: #4a5a6e;
+  --color-ink-4: #8995a5;
+
+  /* =====================================================================
+   * Typography
+   * ===================================================================*/
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Bricolage Grotesque', 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: 'Piazzolla', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Replicate type scale */
+  --text-caption: 10px;
+  --leading-caption: 1.43;
+  --text-body: 14px;
+  --leading-body: 1.43;
+  --tracking-body: -0.35px;
+  --text-body-lg: 16px;
+  --leading-body-lg: 1.5;
+  --tracking-body-lg: -0.4px;
+  --text-subheading: 18px;
+  --leading-subheading: 1.5;
+  --tracking-subheading: -0.45px;
+  --text-heading: 24px;
+  --leading-heading: 1.33;
+  --tracking-heading: -0.6px;
+  --text-heading-lg: 30px;
+  --leading-heading-lg: 1.2;
+  --text-display: 48px;
+  --leading-display: 1.2;
+  --tracking-display: -1.2px;
+  --text-display-lg: 72px;
+  --leading-display-lg: 1;
+  --tracking-display-lg: -1.8px;
+  --text-display-xl: 128px;
+  --leading-display-xl: 1;
+  --tracking-display-xl: -3.2px;
+
+  /* =====================================================================
+   * Spacing (8px base, compact density)
+   * ===================================================================*/
+  --spacing-8: 8px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-96: 96px;
+  --spacing-144: 144px;
+
+  --section-gap: 48px;
+  --card-padding: 16px;
+  --element-gap: 8px;
+
+  /* =====================================================================
+   * Radii — sharp by default, pills for buttons / badges
+   * ===================================================================*/
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-full: 9999px;
+
+  --radius-cards: 0px;
+  --radius-badges: 9999px;
+  --radius-buttons: 9999px;
+  --radius-defaults: 0px;
+
+  /* =====================================================================
+   * Shadows
+   * ===================================================================*/
+  --shadow-subtle: rgb(228, 199, 103) 0px 1px 2px 0px;
+
+  /* =====================================================================
+   * Motion easing
+   * ===================================================================*/
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+}
+
+/* =====================================================================
+ * Brand gradient (Data Bloom) — outside @theme because --gradient-*
+ * is not a recognised Tailwind v4 theme namespace.
+ * ===================================================================*/
+:root {
+  --gradient-data-bloom: linear-gradient(
+    to right bottom,
+    rgb(91, 192, 255),
+    rgb(30, 99, 184),
+    rgb(180, 230, 255)
+  );
+}
+
+/* =====================================================================
+ * Base reset
+ * ===================================================================*/
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  letter-spacing: -0.0125em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle film-grain overlay — breaks up flat gradients/surfaces so they
+   don't read as machine-perfect. Applied once, fixed, very low opacity. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Display headings — tight, modern, compact */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+}
+
+/* =====================================================================
+ * Lenis smooth-scroll requirements
+ * ===================================================================*/
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* =====================================================================
+ * Selection & scrollbar
+ * ===================================================================*/
+::selection {
+  background: var(--color-navy-200);
+  color: var(--color-blackhole);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-whisper-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-silver-mist);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-absolute-zero);
+}
+
+/* =====================================================================
+ * Skip-to-content link — tersembunyi secara visual, muncul begitu
+ * di-Tab (fokus keyboard pertama di tiap halaman).
+ * ===================================================================*/
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 10000;
+  background: var(--color-absolute-zero);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: var(--text-body);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s var(--ease-smooth);
+}
+
+.skip-to-content:focus {
+  top: 16px;
+}
+
+/* =====================================================================
+ * prefers-reduced-motion — hormatin setting OS/browser user (biasanya
+ * aktif karena vertigo / motion sickness). Matikan animasi & smooth
+ * scroll, biarin transisi warna/opacity dasar tetap jalan.
+ * ===================================================================*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto !important;
+  }
+}
+
+/* =====================================================================
+ * Utility — Data Bloom gradient surface
+ * ===================================================================*/
+.data-bloom {
+  background-image: var(--gradient-data-bloom);
+}
+
+.data-bloom-text {
+  background-image: var(--gradient-data-bloom);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}

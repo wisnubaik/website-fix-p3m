@@ -1,0 +1,21 @@
+.frame { min-width: 0; width: 100%; }
+.toolbar { display: flex; justify-content: flex-end; align-items: center; gap: 12px; margin-bottom: 10px; font-size: 12px; line-height: 1.5; color: #526174; }
+.toolbar button { border: 1px solid #cbd5e1; border-radius: 3px; background: #fff; padding: 6px 12px; color: #183e62; cursor: pointer; font: inherit; }
+.toolbar button:hover { background: #f1f5f9; }
+.toolbar button:focus-visible, .viewport:focus-visible { outline: 2px solid #2563eb; outline-offset: 3px; }
+.viewport { width: 100%; overflow: auto; border: 1px solid #d4d9df; background: #fff; overscroll-behavior-x: contain; }
+.frame .drawing { display: block; width: 100%; min-width: 960px; height: auto; color: #111; font-family: Arial, Helvetica, sans-serif; }
+.frame .expanded { width: var(--diagram-width); min-width: 100%; max-width: none; }
+.shape { fill: #fff; stroke: #111; stroke-width: 1.4px; }
+.command { stroke: #111; stroke-width: 1.3px; fill: none; }
+.coordination { stroke: #168bff; stroke-width: 1.2px; stroke-dasharray: 5 5; fill: none; }
+.label { fill: #111; user-select: text; }
+.editable { cursor: pointer; outline: none; }
+.editable:hover > .shape, .editable:focus > .shape { stroke: #1d65ba; stroke-width: 2.4px; fill: #f0f7ff; }
+.editable:focus-visible { outline: 2px solid #1d65ba; outline-offset: 3px; }
+.editable:hover > .label, .editable:focus > .label { fill: #164e91; text-decoration: underline; }
+.entryTarget { fill: transparent; pointer-events: all; }
+.editable:hover > .entryTarget, .editable:focus > .entryTarget { fill: #e9f2ff; }
+@media (min-width: 1100px) { .scrollHint { display: none; } }
+@media (max-width: 600px) { .toolbar { justify-content: space-between; } }
+@media print { .toolbar { display: none; } .viewport { overflow: visible; border: 0; } .frame .drawing, .frame .expanded { width: 100%; min-width: 0; } }

@@ -1,0 +1,903 @@
+{
+  "quick-access": {
+    "href": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "title": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "meta": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "iconName": {
+      "type": "String",
+      "nullable": false,
+      "required": false
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "winners": {
+    "category": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "name": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "skema": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "tag": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "riset-entries": {
+    "category": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "year": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "title": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "leader": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "member1": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "member2": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "funding": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "hero": {
+    "badge": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "titleText": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "titleItalicWord": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "lead": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "ctaPrimaryLabel": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "ctaPrimaryHref": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "ctaSecondaryLabel": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "ctaSecondaryHref": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    }
+  },
+  "asesmen": {
+    "prodi": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "tanggal": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "content-list": {
+    "section": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "text": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "hub-cards": {
+    "hub": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "title": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "desc": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "href": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "settings": {
+    "logoUrl": {
+      "label": "Logo situs",
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "institution": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "officeTitle": {
+      "type": "String",
+      "nullable": false,
+      "required": false
+    },
+    "officeDescription": {
+      "type": "String",
+      "nullable": false,
+      "required": false
+    },
+    "email": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "phone": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "fax": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "instagram": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "address": {
+      "label": "alamat",
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "mapsUrl": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "poBox": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    }
+  },
+  "roadmap": {
+    "year": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "title": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "desc": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "pbl": {
+    "prodi": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "proyek": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "sumber": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "mitra": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "bidang": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "waktu": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "jumlahMahasiswa": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "mahasiswa": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "peranNama": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "jumlahProdi": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "hasil": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "belum": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "sudah": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "staff": {
+    "role": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "name": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "initial": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "photoUrl": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "details": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "trend-stats": {
+    "metric": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "year": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "value": {
+      "type": "Int",
+      "nullable": false,
+      "required": true
+    }
+  },
+  "documents": {
+    "section": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "groupTitle": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "groupMark": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "name": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "kind": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "year": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "category": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "href": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    },
+    "periodeId": {
+      "type": "String",
+      "required": false,
+      "nullable": true
+    },
+    "skemaId": {
+      "type": "String",
+      "required": false,
+      "nullable": true
+    }
+  },
+  "ki-karya": {
+    "tahun": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "judul": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "ketua": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "prodi": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "jenisKi": {
+      "type": "String",
+      "nullable": false,
+      "required": false
+    },
+    "bentuk": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "status": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "stat-entries": {
+    "group": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "label": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "value": {
+      "type": "Int",
+      "nullable": false,
+      "required": true
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "acara-periode": {
+    "acara": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "judul": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "tanggalMulai": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "tanggalSelesai": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "tempat": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "keterangan": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    },
+    "tahun": {
+      "type": "Int",
+      "required": true,
+      "nullable": false
+    },
+    "timeline": {
+      "type": "String",
+      "required": false,
+      "nullable": true
+    }
+  },
+  "clusters": {
+    "title": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "desc": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "riset-grup": {
+    "nama": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "ketua": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "fokus": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "deskripsi": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "roadmapHref": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "logoUrl": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "anggota": {
+      "type": "Int",
+      "nullable": true,
+      "required": false
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "announcements": {
+    "num": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "tahun": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "title": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "kind": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "badge": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "urgent": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    },
+    "href": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "monev-slot": {
+    "acara": {
+      "type": "String",
+      "nullable": false,
+      "required": false
+    },
+    "jurusan": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "sesi": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "tanggal": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "mulai": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "selesai": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "nama": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "prodi": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    },
+    "periodeId": {
+      "type": "String",
+      "required": true,
+      "nullable": false
+    },
+    "skemaId": {
+      "type": "String",
+      "required": true,
+      "nullable": false
+    },
+    "tempat": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "reviewer": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "catatan": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    }
+  },
+  "kegiatan": {
+    "judul": {
+      "type": "String",
+      "nullable": false,
+      "required": true
+    },
+    "tanggalMulai": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "tanggalSelesai": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "tempat": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "narasumber": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "ringkasan": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "foto": {
+      "type": "String",
+      "nullable": true,
+      "required": false
+    },
+    "order": {
+      "type": "Int",
+      "nullable": false,
+      "required": false
+    },
+    "published": {
+      "type": "Boolean",
+      "nullable": false,
+      "required": false
+    }
+  },
+  "acara-skema": {
+    "acara": {
+      "type": "String",
+      "required": true,
+      "nullable": false
+    },
+    "periodeId": {
+      "type": "String",
+      "required": true,
+      "nullable": false
+    },
+    "nama": {
+      "type": "String",
+      "required": true,
+      "nullable": false
+    },
+    "keterangan": {
+      "type": "String",
+      "required": false,
+      "nullable": true
+    },
+    "order": {
+      "type": "Int",
+      "required": false,
+      "nullable": false
+    },
+    "published": {
+      "type": "Boolean",
+      "required": false,
+      "nullable": false
+    }
+  }
+}
