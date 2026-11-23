@@ -1,0 +1,1 @@
+@include('errors.layout', ['code' => 503, 'title' => 'Sedang dalam pemeliharaan', 'message' => 'Situs sedang dalam pemeliharaan atau server sedang kelebihan beban.', 'hint' => 'Coba lagi dalam beberapa menit.'])

@@ -1,0 +1,1 @@
+@include('errors.layout', ['code' => 429, 'title' => 'Terlalu banyak permintaan', 'message' => 'Server menerima terlalu banyak permintaan dalam waktu singkat dan membatasinya sementara demi keamanan.', 'hint' => 'Tunggu sekitar satu menit, lalu coba lagi. Hindari menekan tombol berulang kali.'])

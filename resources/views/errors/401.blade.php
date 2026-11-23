@@ -1,0 +1,1 @@
+@include('errors.layout', ['code' => 401, 'title' => 'Anda belum masuk', 'message' => 'Halaman ini hanya untuk pengguna yang sudah login, atau sesi Anda sudah berakhir.', 'hint' => 'Buka halaman login admin, masuk kembali, lalu ulangi langkah Anda.'])

@@ -1,0 +1,1 @@
+@include('errors.layout', ['code' => $exception->getStatusCode(), 'title' => 'Terjadi gangguan pada server', 'message' => 'Server mengalami masalah saat memproses permintaan Anda. Ini bukan kesalahan Anda.', 'hint' => 'Coba lagi beberapa saat. Jika terus terjadi, hubungi pengelola teknis.'])

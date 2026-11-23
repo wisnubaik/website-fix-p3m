@@ -1,0 +1,1 @@
+@include('errors.layout', ['code' => 500, 'title' => 'Terjadi gangguan pada server', 'message' => 'Server mengalami masalah saat memproses permintaan Anda. Ini bukan kesalahan Anda.', 'hint' => 'Coba muat ulang beberapa saat lagi. Jika terus terjadi, hubungi pengelola teknis dan sebutkan waktu kejadiannya. Perubahan terakhir mungkin belum tersimpan.'])

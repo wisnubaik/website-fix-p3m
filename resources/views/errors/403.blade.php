@@ -1,0 +1,1 @@
+@include('errors.layout', ['code' => 403, 'title' => 'Akses ditolak', 'message' => 'Akun Anda tidak memiliki izin untuk membuka halaman atau melakukan tindakan ini.', 'hint' => 'Hubungi superadmin jika Anda merasa seharusnya punya akses. Beberapa menu, seperti pengaturan halaman dan menu, khusus superadmin.'])

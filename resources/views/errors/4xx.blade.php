@@ -1,0 +1,1 @@
+@include('errors.layout', ['code' => $exception->getStatusCode(), 'title' => 'Permintaan tidak dapat diproses', 'message' => 'Permintaan Anda tidak dapat diselesaikan. Alamat, isi data, atau ukuran berkas yang dikirim mungkin tidak sesuai.', 'hint' => 'Muat ulang halaman, periksa kembali isian Anda, lalu coba lagi.'])

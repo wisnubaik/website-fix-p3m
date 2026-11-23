@@ -1,0 +1,1 @@
+@include('errors.layout', ['code' => 404, 'title' => 'Halaman tidak ditemukan', 'message' => 'Alamat yang Anda buka tidak ada, sudah dipindahkan, atau halamannya belum diterbitkan.', 'hint' => 'Periksa kembali penulisan alamat, atau mulai dari beranda lalu pilih menu yang Anda cari.'])

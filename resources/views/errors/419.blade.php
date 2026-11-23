@@ -1,0 +1,1 @@
+@include('errors.layout', ['code' => 419, 'title' => 'Sesi halaman kedaluwarsa', 'message' => 'Halaman ini terlalu lama dibiarkan terbuka sehingga tanda keamanannya sudah tidak berlaku. Perubahan terakhir belum diproses.', 'hint' => 'Muat ulang halaman dengan Ctrl+F5, login kembali jika diminta, lalu ulangi. Salin dulu teks yang belum sempat tersimpan.'])
