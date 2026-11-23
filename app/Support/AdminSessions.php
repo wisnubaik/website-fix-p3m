@@ -13,6 +13,31 @@ class AdminSessions
 
     public const ABSOLUTE_SECONDS = 28800;
 
+    /**
+     * Batas sesi aktif bersamaan per akun. Login baru mencabut sesi lama yang paling lama tidak aktif,
+     * sehingga satu akun hanya dipakai di satu perangkat pada satu waktu. Ubah angkanya jika ingin lebih longgar.
+     */
+    public const MAX_CONCURRENT = 1;
+
+    private static function enforceConcurrentLimit(Request $request, string $currentId): void
+    {
+        $admin = $request->user();
+        $now = now()->timestamp;
+        $others = DB::table('admin_login_sessions')
+            ->where('admin_id', $admin->id)->where('id', '!=', $currentId)
+            ->whereNull('revoked_at')->where('expires_at', '>', $now)
+            ->orderByDesc('last_active_at')->get(['id', 'last_active_at']);
+        $revoke = $others->slice(max(0, self::MAX_CONCURRENT - 1));
+        if ($revoke->isEmpty()) {
+            return;
+        }
+        DB::table('admin_login_sessions')->whereIn('id', $revoke->pluck('id')->all())->update(['revoked_at' => $now]);
+        // Catat hanya jika sesi yang dicabut memang masih aktif, supaya sesi yang sudah lama menganggur tidak menimbulkan log.
+        if ($revoke->contains(fn ($row) => $row->last_active_at > $now - self::IDLE_SECONDS)) {
+            Audit::record($admin, 'logout_session', 'account', 'Sesi lama dicabut otomatis karena akun masuk lagi dari perangkat lain');
+        }
+    }
+
     public static function start(Request $request, string $method, ?int $expires = null): void
     {
         $admin = $request->user();
@@ -26,6 +51,10 @@ class AdminSessions
             'expires_at' => $expires, 'revoked_at' => null,
         ]);
         $request->session()->put(['admin_session_id' => $id, 'admin_expires_at' => $expires]);
+        // Sesi lama yang baru dibuatkan catatannya ('legacy') tidak ikut membatasi, agar tidak saling mencabut.
+        if ($method !== 'legacy') {
+            self::enforceConcurrentLimit($request, $id);
+        }
         DB::table('admin_login_sessions')->where('admin_id', $admin->id)
             ->where('expires_at', '<', now()->timestamp - 86400)->delete();
     }
